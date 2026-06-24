@@ -1,0 +1,17 @@
+{
+  "name": "codex-mobile-web-worker",
+  "version": "0.1.11",
+  "description": "Cloudflare Worker for Codex Mobile Web with AI capabilities",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler deploy --env preview"
+  },
+  "dependencies": {
+    "@cloudflare/kv-assetstore": "^2.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/wrangler": "^3.0.0"
+  }
+}

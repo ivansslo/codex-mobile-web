@@ -1,7 +1,7 @@
 name = "codex-mobile-web"
 main = "worker.js"
 compatibility_date = "2025-06-24"
-account_id = "<YOUR_ACCOUNT_ID>"
+account_id = "37c44b4d3f192a627d20e46bdf910e79"
 
 [build]
 command = "npm run build"
@@ -16,3 +16,7 @@ not_found_handling = "404"
 
 [observability]
 enabled = true
+
+# Worker AI Configuration
+[ai]
+path = "/ai"
