@@ -1,7 +1,7 @@
 {
   "name": "Codex Mobile",
   "short_name": "Codex",
-  "description": "A mobile web client for Codex app-server.",
+  "description": "Klien web mobile untuk Codex app-server.",
   "id": "/",
   "start_url": "/",
   "scope": "/",
