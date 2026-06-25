@@ -31,8 +31,11 @@ fi
 
 cd "$PROJECT_DIR"
 
-echo "Installing dependencies..."
-npm install --no-audit --no-fund --prefer-offline 2>/dev/null || npm install
+echo "Installing dependencies (Termux optimized)..."
+# Only install runtime dependencies (skip broken Cloudflare packages)
+npm install --no-audit --no-fund --production --prefer-offline 2>/dev/null || \
+npm install web-push --no-audit --no-fund 2>/dev/null || \
+echo "Warning: Some packages may be missing, but core functionality should work."
 
 # Default port for Termux (avoid conflicts)
 PORT=${PORT:-8080}

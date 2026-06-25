@@ -24,10 +24,7 @@
     "tailscale"
   ],
   "dependencies": {
-    "web-push": "^3.6.7",
-    "@cloudflare/kv-assetstore": "^2.0.0"
+    "web-push": "^3.6.7"
   },
-  "devDependencies": {
-    "@cloudflare/wrangler": "^3.0.0"
-  }
+  "devDependencies": {}
 }
