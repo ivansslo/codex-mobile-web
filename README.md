@@ -17,7 +17,7 @@ plugin AI Home tersemat.
 
 1. **Kloning repository**:
    ```bash
-   git clone https://github.com/ivansslo/codex-mobile-web.git
+   git clone https://github.com/devel/codex-mobile-web.git
    cd codex-mobile-web
    ```
 
