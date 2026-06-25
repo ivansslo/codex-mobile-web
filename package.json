@@ -24,7 +24,7 @@
   ],
   "dependencies": {
     "web-push": "^3.6.7",
-    ""@cloudflare/kv-assetstore": "^2.0.0"
+    "@cloudflare/kv-assetstore": "^2.0.0"
   },
   "devDependencies": {
     "@cloudflare/wrangler": "^3.0.0"
