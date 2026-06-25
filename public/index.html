@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
@@ -234,8 +234,8 @@
         recovery.hidden = false;
         recovery.setAttribute("data-reason", recoveryReason);
         setStatus(recoveryReason === "script-error"
-          ? "页面脚本启动失败。可以先清理 PWA 缓存并重新加载。"
-          : "页面启动时间过长。可以先清理 PWA 缓存并重新加载。");
+          ? "Page script failed to start. Try clearing PWA cache and reloading."
+          : "Page taking too long to start. Try clearing PWA cache and reloading.");
       }
       function hideRecovery() {
         var recovery = $("bootRecovery");
@@ -256,7 +256,7 @@
         }
       }
       async function recover() {
-        setStatus("正在清理 PWA 缓存并重新加载...");
+        setStatus("Clearing PWA cache and reloading...");
         try {
           await clearShellState();
         } catch (err) {
@@ -265,7 +265,7 @@
         window.location.replace(cacheBustUrl());
       }
       function reloadOnly() {
-        setStatus("正在重新加载...");
+        setStatus("Reloading...");
         window.location.replace(cacheBustUrl());
       }
       function installRecoveryButtons() {
@@ -345,17 +345,17 @@
           <div class="version-actions">
             <button id="appUpdateStatus" class="update-status hidden" type="button" aria-live="polite" title="Check for updates">v0.1.0</button>
             <button id="publicPrStatus" class="public-pr-status hidden" type="button" aria-live="polite" title="Check public pull requests">Public PR</button>
-            <button id="hardRefreshButton" class="hard-refresh-button" type="button" title="Hard refresh page shell" aria-label="Hard refresh page shell">硬刷新</button>
+            <button id="hardRefreshButton" class="hard-refresh-button" type="button" title="Hard refresh page shell" aria-label="Hard refresh page shell">Hard refresh</button>
             <button id="sharedRestartButton" class="restart-button" type="button" title="Restart Mobile Web" aria-label="Restart Mobile Web">Restart</button>
           </div>
         </div>
         <div class="side-header-actions">
-          <button id="themeSettingsToggle" class="icon-button" type="button" title="设置" aria-label="设置" aria-expanded="false">⚙</button>
+          <button id="themeSettingsToggle" class="icon-button" type="button" title="Settings" aria-label="Settings" aria-expanded="false">⚙</button>
           <button id="closeMenu" class="icon-button mobile-only" type="button" title="Close menu">×</button>
         </div>
       </div>
 
-      <div id="themeSettingsPanel" class="theme-settings hidden" aria-label="设置">
+      <div id="themeSettingsPanel" class="theme-settings hidden" aria-label="Settings">
         <div class="settings-section">
           <div class="theme-settings-title">主题</div>
           <div class="settings-options" role="group" aria-label="Theme">
@@ -393,9 +393,9 @@
           <button id="workspaceSelect" class="sidebar-workspace-select" type="button" aria-haspopup="listbox" aria-expanded="false">
             All workspaces
           </button>
-          <div id="workspaceSelectMenu" class="workspace-select-menu" role="listbox" aria-label="Workspace 列表" hidden></div>
+          <div id="workspaceSelectMenu" class="workspace-select-menu" role="listbox" aria-label="Workspace list" hidden></div>
         </div>
-        <button id="newThreadButton" class="sidebar-new-thread-button" type="button" title="新建对话" aria-label="新建对话">新建对话</button>
+        <button id="newThreadButton" class="sidebar-new-thread-button" type="button" title="New chat" aria-label="New chat">New chat</button>
       </div>
       <div id="workspacePath" class="workspace-path" hidden></div>
       <div id="workspaceTokenUsage" class="workspace-token-usage" hidden></div>
@@ -426,7 +426,7 @@
       </button>
 
       <section id="conversation" class="conversation">
-        <div class="empty-state">Select a thread from the menu.</div>
+        <div class="empty-state">Start chatting with Codex. Select or create a thread.</div>
       </section>
 
       <section id="liveOperationDock" class="live-operation-dock" aria-live="polite" hidden></section>
@@ -464,7 +464,7 @@
             <button id="quotaUsage" class="composer-control-card quota-usage unknown" type="button" title="Quota remaining" aria-live="polite">-- | --</button>
           </div>
           <div id="attachmentList" class="attachment-list hidden"></div>
-          <div id="messageInput" class="message-input" contenteditable="false" role="textbox" aria-multiline="true" inputmode="text" enterkeyhint="send" data-placeholder="Message Codex"></div>
+          <div id="messageInput" class="message-input" contenteditable="false" role="textbox" aria-multiline="true" inputmode="text" enterkeyhint="send" data-placeholder="Chat with Codex"></div>
         </div>
         <button id="sendMessage" type="submit" disabled>Send</button>
       </form>
