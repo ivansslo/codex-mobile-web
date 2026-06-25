@@ -33,5 +33,5 @@ jobs:
       - name: Run syntax checks
         run: npm run check
 
-      - name: Run launcher syntax checks
-        run: npm run check:macos
+      - name: Run launcher syntax checks (linux-android-arm64)
+        run: npm run check:linux-android-arm64
