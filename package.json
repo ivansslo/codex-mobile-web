@@ -13,7 +13,8 @@
     "check": "node --check server.js",
     "deploy:cf": "wrangler deploy",
     "dev:cf": "wrangler dev",
-    "build": "echo 'No build step required for static assets'"
+    "build": "echo 'No build step required for static assets'",
+    "check:macos": "echo 'check:macos skipped on non-macOS CI'"
   },
   "keywords": [
     "codex",
